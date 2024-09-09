@@ -1,0 +1,9 @@
+{
+    "name": "Gustavo",
+    "email": "gustavo@email.com",
+    "hobbies": ["Estudar", "Treinar", "Ler"],
+    "address": {
+        "street": "Rua Dos Bobos",
+        "number": 0
+    }
+}

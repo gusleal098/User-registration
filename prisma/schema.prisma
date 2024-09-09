@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// datasource db { NO LUGAR O datasource db
+//   provider = "mongodb"
+//   url      = env("DATABASE_URL")
+// }
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId // O SCHEMA VAI CRIAR UM ID PARA MIM
+  email   String   @unique // O EMAIL É ÚNICO, NÃO PODE SE REPETIR
+  name    String  //QUANDO EU USO O "?" SIGNIFICA QUE O NAME NÃO É OBRIGATÓRIO, QUANDO NÃO USO ELE, SIGNIFICA QUE É OBRIGATÓRIO
+  age     Int //O "Int" SIGNIFICA QUE O NÚMERO É INTEIRO
+}
